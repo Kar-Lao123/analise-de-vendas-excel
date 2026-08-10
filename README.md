@@ -1,88 +1,107 @@
 # 📊 Análise de Vendas — BrightMart Retail Co.
 
-## Por que eu fiz esse projeto?
+## 🎯 O objetivo do projeto
 
-Eu queria responder uma pergunta simples:
-**"Onde está o dinheiro que essa empresa está deixando na mesa?"**
+Este projeto foi desenvolvido para analisar o desempenho de uma empresa fictícia de varejo e transformar dados de vendas em informações que poderiam apoiar decisões comerciais.
 
-Pegar um dataset bruto de varejo e transformar em decisões acionáveis —
-sem relatório bonito, sem gráfico decorativo. Só resposta para quem decide.
+A principal pergunta que guiou a análise foi:
 
----
+> **Onde estão os principais pontos positivos e oportunidades de melhoria nas vendas da empresa?**
 
-## Como eu pensei o problema
-
-Antes de abrir o Excel, me fiz três perguntas:
-
-1. **O que está vendendo mais — e o que está dando mais lucro?** (nem sempre é a mesma coisa)
-2. **Existe alguma região ou loja que destoa das outras?**
-3. **Tem algum padrão nos pedidos cancelados ou devolvidos?**
-
-Essas três perguntas guiaram todas as métricas que escolhi construir.
-Não fui pelo caminho de "vou criar todos os gráficos possíveis".
-Fui pelo caminho de "o que eu precisaria saber se fosse o gerente dessa rede?"
+Em vez de analisar apenas o faturamento, procurei observar diferentes aspectos dos pedidos, como **categorias, regiões, margem e status das vendas**.
 
 ---
 
-## O que os dados disseram
+## 🧠 Como eu pensei o problema
 
-> 6.000 transações · $1,86M em vendas · Margem de 39,9%
+Antes de começar a montar o dashboard, defini algumas perguntas que gostaria de responder:
 
-**Electronics domina — mas com armadilha.**
-A categoria representa 50% do faturamento total ($935K), muito à frente de
-Home & Kitchen ($327K) e Sports & Outdoors ($283K).
-O problema: Electronics também concentra os tickets mais altos e,
-proporcionalmente, mais devoluções. Faturamento alto ≠ lucro garantido.
+1. **Quais categorias geram mais vendas e qual é o comportamento de suas margens?**
+2. **Quais regiões apresentam melhor e pior desempenho?**
+3. **O que acontece com os pedidos que são cancelados ou devolvidos?**
+4. **Existe algum padrão que possa indicar uma oportunidade de melhoria?**
 
-**A região Midwest é o ponto de atenção.**
-Northeast lidera em vendas ($547K), seguido por West ($504K) e South ($455K).
-O Midwest ficou em $355K — quase $200K abaixo do líder, com a mesma
-quantidade de lojas proporcionalmente. Isso não é azar. É um problema
-operacional ou de mix de produto que merece investigação.
-
-**8,5% dos pedidos nunca viraram receita.**
-510 devoluções + 303 cancelamentos = 813 pedidos que consumiram custo
-operacional e não geraram retorno. Em $1,86M de vendas, isso representa
-um vazamento silencioso que nenhum dashboard de vendas sozinho captura.
-
-**Nenhum método de pagamento domina.**
-Cash (1.233), Debit Card (1.229), Credit Card (1.208), Bank Transfer (1.173)
-e Digital Wallet (1.157) ficaram todos muito próximos. Isso sugere que
-a base de clientes é diversa — e que campanhas segmentadas por
-comportamento de pagamento podem ter baixo retorno.
+Essas perguntas ajudaram a definir quais métricas e análises seriam utilizadas no projeto.
 
 ---
 
-## O que eu errei (e aprendi)
+## 📊 O que os dados mostraram
 
-No início, comecei analisando vendas brutas por categoria e achei que
-Electronics era imbatível. Esqueci de cruzar com margem e status dos pedidos.
-Quando fiz esse cruzamento, a história mudou — e eu tive que refazer
-parte da análise.
+A base possui **6.000 transações**, representando aproximadamente **$1,86 milhão em vendas**, com uma **margem de 39,9%**.
 
-Também não separei devoluções de cancelamentos logo de cara,
-o que distorceu minha leitura de taxa de conversão por algumas horas.
-Detalhe simples, erro caro.
+### 💻 Electronics representa grande parte das vendas
+
+A categoria **Electronics** apresentou o maior volume de vendas, com aproximadamente **$935 mil**, representando cerca de metade do faturamento analisado.
+
+**Home & Kitchen** apresentou aproximadamente **$327 mil**, enquanto **Sports & Outdoors** ficou em torno de **$283 mil**.
+
+Isso mostra a forte participação de **Electronics** no faturamento, mas também levanta a necessidade de observar outros indicadores além das vendas, como **margem e devoluções**.
+
+### 🌎 Midwest apresenta o menor faturamento entre as regiões
+
+A região **Northeast** apresentou aproximadamente **$547 mil** em vendas, seguida por **West ($504 mil)** e **South ($455 mil)**.
+
+Já a região **Midwest** apresentou aproximadamente **$355 mil**, ficando consideravelmente abaixo das demais.
+
+Esse resultado indica uma oportunidade para investigar fatores como **mix de produtos, desempenho das lojas e comportamento dos pedidos** nessa região.
+
+### 📦 Cancelamentos e devoluções representam uma parcela relevante dos pedidos
+
+Foram identificados **510 pedidos devolvidos** e **303 pedidos cancelados**, totalizando **813 pedidos** nessas duas situações.
+
+Esses pedidos merecem atenção porque representam operações que não tiveram o mesmo resultado de uma venda concluída e podem indicar **custos operacionais ou oportunidades de melhoria no processo**.
 
 ---
 
-## O que eu faria diferente hoje
+## 🔎 Um dos principais aprendizados
 
-- Cruzaria **devoluções por categoria e por loja** desde o início —
-  é onde mora o insight mais acionável
-- Incluiria uma análise de **cohort por membership tier** (Bronze/Silver/Gold)
-  para entender se clientes mais engajados têm ticket médio e margem maiores
-- Adicionaria **sazonalidade mensal** para identificar picos e vales de demanda
+No início da análise, minha atenção estava muito concentrada nas vendas por categoria.
+
+Por exemplo, ao observar que **Electronics** possuía um faturamento muito superior às outras categorias, a primeira impressão era de que esse era simplesmente o melhor resultado.
+
+Porém, ao cruzar diferentes indicadores, percebi que:
+
+> **Faturamento sozinho não conta toda a história.**
+
+Foi necessário observar também **margem, status dos pedidos e outros indicadores** para conseguir interpretar melhor o desempenho.
+
+Esse foi um dos principais aprendizados do projeto: **uma análise não deve ser baseada em apenas uma métrica.**
 
 ---
 
-## Ferramentas
+## 🛠️ Ferramentas utilizadas
 
-`Microsoft Excel / Dax / Power Pivot` — tratamento de dados, tabelas dinâmicas, indicadores e dashboard
+* **Microsoft Excel**
+* **Power Pivot**
+* **DAX**
+* **Tabelas Dinâmicas**
+* **Dashboard e visualização de dados**
+
+No desenvolvimento do projeto, utilizei medidas DAX, incluindo funções como:
+
+```DAX
+COUNTROWS()
+DIVIDE()
+```
+
+Essas medidas foram utilizadas para criar indicadores e realizar cálculos sobre os dados.
+
+O **Power Pivot** foi utilizado para trabalhar com o **modelo de dados** e as medidas utilizadas no dashboard.
 
 ---
 
-## Dataset
+## 📁 Dataset
 
-Dados fictícios gerados para fins de portfólio.
-Estrutura baseada em cenários reais de varejo multicanal.
+Os dados utilizados são **fictícios e foram gerados para fins de portfólio**, utilizando uma estrutura baseada em um cenário de varejo.
+
+O objetivo do projeto não é representar uma empresa real, mas sim demonstrar o processo de **análise, tratamento e visualização de dados** utilizando Excel.
+
+---
+
+## 🎯 Objetivo profissional
+
+Este projeto faz parte do meu processo de aprendizado em **Análise de Dados e Business Intelligence**.
+
+Meu objetivo é desenvolver cada vez mais minha capacidade de **transformar dados em informações úteis para tomada de decisão**, utilizando ferramentas como:
+
+`Excel` · `Power Pivot` · `DAX` · `Power BI`
