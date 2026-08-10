@@ -78,7 +78,7 @@ Detalhe simples, erro caro.
 
 ## Ferramentas
 
-`Microsoft Excel` — tratamento de dados, tabelas dinâmicas, indicadores e dashboard
+`Microsoft Excel / Dax / Power Pivot` — tratamento de dados, tabelas dinâmicas, indicadores e dashboard
 
 ---
 
